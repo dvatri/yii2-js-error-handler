@@ -1,0 +1,19 @@
+{
+    "name": "tunect/yii2-js-error-handler",
+    "description": "Yii2 javascript errors handler",
+    "type": "yii2-extension",
+    "autoload": {
+        "psr-4": {
+            "tunect\\Yii2JsErrorHandler\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tunect",
+            "email": "mail@tunect.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    }
+}
