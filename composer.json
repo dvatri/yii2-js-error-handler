@@ -15,5 +15,8 @@
     ],
     "require": {
         "yiisoft/yii2": "*"
-    }
+    },
+    "extra": {
+        "bootstrap": "tunect\\Yii2JsErrorHandler\\Bootstrap"
+	}
 }
