@@ -12,22 +12,31 @@ class Bootstrap implements BootstrapInterface
     {
         $name = Module::$moduleName;
 
+		if (!$app->hasModule($name)) {
+			$app->setModule($name, new Module($name));
+		}
         if ($app instanceof \yii\web\Application) {
-            if (!$app->hasModule($name)) {
-                $app->setModule($name, new Module($name));
-            }
             $rules[] = [
                 'class' => 'yii\web\GroupUrlRule',
                 'prefix' => $name,
                 'rules' => [
                     '/' => 'default/index',
-                    'add' => 'default/create',
-                    '<controller:[\w-]+>/<action:[\w-]+>' => '<controller>/<action>',
+                    '<action:[\w-]+>' => 'default/<action>',
                 ],
             ];
             $app->getUrlManager()->addRules($rules, false);
+
         } elseif ($app instanceof \yii\console\Application) {
-			
+			$app->controllerMap = array_merge($app->controllerMap, [
+				'migrate' => [
+					'migrationNamespaces' => [
+						'tunect\Yii2JsErrorHandler\migrations',
+					],
+				],
+			]);
+			if (empty($app->controllerMap['migrate']['class'])) {
+				$app->controllerMap['migrate']['class'] = 'yii\console\controllers\MigrateController';
+			}
         }
     }
 }
