@@ -2,6 +2,7 @@
     "name": "tunect/yii2-js-error-handler",
     "description": "Yii2 javascript errors handler",
     "type": "yii2-extension",
+    "license": "BSD-3-Clause",
     "autoload": {
         "psr-4": {
             "tunect\\Yii2JsErrorHandler\\": "src"
