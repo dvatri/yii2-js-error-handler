@@ -22,10 +22,6 @@ Run migration:
 
 *It's possible to add custom migration paths since Yii2 2.0.10 (module adds it's path in tunect\Yii2JsErrorHandler\Bootstrap file)*
 
-Add widget to template:
-
-	@todo
-
 That's it, module will work. Additional settings are optional.
 
 ## Module settings
@@ -52,3 +48,5 @@ Errors grid view available on page `/js-error-handler` (the name module was regi
 ## TODO
 
 * Implement controller access control customisation
+* Implement errors search
+* Implement delete / batch delete for errors

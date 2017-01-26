@@ -25,6 +25,7 @@ class Bootstrap implements BootstrapInterface
                 ],
             ];
             $app->getUrlManager()->addRules($rules, false);
+			$app->getModule($name)->registerErrorHandler();
 
         } elseif ($app instanceof \yii\console\Application) {
 			$app->controllerMap = array_merge($app->controllerMap, [
