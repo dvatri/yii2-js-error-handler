@@ -14,7 +14,7 @@ Add to Yii2 project composer.json file:
 
 Run to install extension:
 
-	composer require tunect/yii2-js-error-handler:dev-master
+	composer require tunect/yii2-js-error-handler
 
 Run migration:
 
