@@ -3,14 +3,6 @@
 This module catches all frontend javascript errors, sends error info with AJAX request and saves this data to database.
 
 ## Installation
-Add to Yii2 project composer.json file:
-
-    "repositories": [
-	  	{
-		  	"type": "vcs",
-		  	"url": "https://github.com/dvatri/yii2-js-error-handler"
-		}
-	]
 
 Run to install extension:
 
