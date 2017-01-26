@@ -11,7 +11,7 @@ class m170125_185923_init extends Migration
 	public function init()
 	{
 		parent::init();
-		$this->table_name = \Yii::$app->getModule(Module::$moduleName)->table_name;
+		$this->table_name = \Yii::$app->getModule(Module::$moduleName)->tableName;
 	}
     public function safeUp()
     {

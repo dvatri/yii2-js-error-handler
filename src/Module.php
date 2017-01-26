@@ -7,7 +7,7 @@ use yii\base\BootstrapInterface;
 class Module extends \yii\base\Module
 {
     public static $moduleName = 'js-error-handler';
-	public $table_name = '{{%js_error}}';
+	public $tableName = '{{%js_error}}';
 	
     public function init()
     {

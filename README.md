@@ -39,7 +39,7 @@ Module settings can be changed in app config:
 	'modules' => [
 		'js-error-handler' => [
 			'class' => 'tunect\Yii2JsErrorHandler\Module',
-			'table_name' => '{{%custom_table_name}}',
+			'tableName' => '{{%custom_table_name}}',
 		],
 	],
 
