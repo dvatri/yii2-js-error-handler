@@ -10,6 +10,9 @@ class Bootstrap implements BootstrapInterface
      */
     public function bootstrap($app)
     {
+	if (($app instanceof \yii\web\Application) && $app->request->isAjax) {
+            return;
+        }
         $name = Module::$moduleName;
 
 		if (!$app->hasModule($name)) {
