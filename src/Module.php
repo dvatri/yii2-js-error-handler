@@ -2,12 +2,12 @@
 namespace tunect\Yii2JsErrorHandler;
 
 use Yii;
-use yii\base\BootstrapInterface;
 
 class Module extends \yii\base\Module
 {
     public static $moduleName = 'js-error-handler';
 	public $tableName = '{{%js_error}}';
+	public $roles = ['@'];
 
 	private $js = <<<'JS'
 	window.onerror = function(msg, url, line, column, error){
@@ -40,5 +40,16 @@ JS;
 		]);
 
 		\Yii::$app->getView()->registerJs($js, \yii\web\View::POS_READY);
+	}
+
+	public function getRoles()
+	{
+		if (is_callable($this->roles)) {
+			return $this->roles();
+		}
+		if (is_array($this->roles)) {
+			return $this->roles;
+		}
+		return [$this->roles];
 	}
 }

@@ -4,6 +4,7 @@ namespace tunect\Yii2JsErrorHandler\controllers;
 use Yii;
 use yii\data\ActiveDataProvider;
 use tunect\Yii2JsErrorHandler\models\Error;
+use tunect\Yii2JsErrorHandler\Module;
 
 class DefaultController extends \yii\web\Controller
 {
@@ -16,7 +17,7 @@ class DefaultController extends \yii\web\Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => Yii::$app->getModule(Module::$moduleName)->getRoles(),
                     ],
                 ],
             ],

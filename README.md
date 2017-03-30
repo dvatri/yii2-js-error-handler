@@ -28,10 +28,15 @@ Module settings can be changed in app config:
 		'js-error-handler' => [
 			'class' => 'tunect\Yii2JsErrorHandler\Module',
 			'tableName' => '{{%custom_table_name}}',
+			'roles' => function () {
+				return [\app\models\User::ROLE_ADMIN];
+			},
 		],
 	],
 
 *Note: Settings should be specified both in web and console app configs since this module has a migration. Or you can use common config, merge config parts, etc.*
+
+By default '@' (any authenticated user) role will be used, but any other role(s) can be defined in `roles` module property (see example above). It can take scalar value, array or callable.
 
 ## Errors info
 
@@ -39,6 +44,5 @@ Errors grid view available on page `/js-error-handler` (the name module was regi
 
 ## TODO
 
-* Implement controller access control customisation
 * Implement errors search
 * Implement delete / batch delete for errors
