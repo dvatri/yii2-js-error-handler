@@ -36,7 +36,7 @@ Module settings can be changed in app config:
 
 *Note: Settings should be specified both in web and console app configs since this module has a migration. Or you can use common config, merge config parts, etc.*
 
-By default '@' (any authenticated user) role will be used, but any other role(s) can be defined in `roles` module property (see example above). It can take scalar value, array or callable.
+By default `'@'` (any authenticated user) role will be used, but any other role(s) can be defined in `roles` module property (see example above). It can take scalar value, array or callable.
 
 ## Errors info
 

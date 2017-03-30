@@ -45,7 +45,7 @@ JS;
 	public function getRoles()
 	{
 		if (is_callable($this->roles)) {
-			return $this->roles();
+			return call_user_func($this->roles);
 		}
 		if (is_array($this->roles)) {
 			return $this->roles;
