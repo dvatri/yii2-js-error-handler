@@ -23,10 +23,19 @@ class Error extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id'], 'integer'],
-            [['details'], 'safe'],
+            ['user_id', 'integer'],
+			['user_id', 'filter', 'filter' => 'intval'],
+            ['details', 'safe'],
 			[['user_id', 'error'], 'required'],
             [['page', 'error'], 'string', 'max' => 255],
         ];
     }
+
+	public function beforeValidate()
+	{
+		if (strlen($this->page) > 255) {
+			$this->page = substr($this->page, 0, 255);
+		}
+		return parent::beforeValidate();
+	}
 }
